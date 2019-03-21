@@ -12,7 +12,7 @@ db = firestore.client()
 
 
 import csv
-with open('list0.csv', 'r') as f:
+with open('list.csv', 'r') as f:
     reader = csv.reader(f)
     header = next(reader)
 
