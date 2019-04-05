@@ -1,4 +1,6 @@
 env/
 key.json
+key2.json
 list.csv
 list0.csv
+*.csv
