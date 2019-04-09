@@ -1,5 +1,5 @@
 import firebase_admin
-from module import Majoreco,Majoredu,Majortou,Majoreng,Targett,Termm,Terme,Dayday,Periodd,Daydayday
+from module import Majoreco,Majoredu,Majortou,Majoreng,Targett,Termm,Terme,Dayday,Periodd,Daydayday,Majorpan
 from firebase_admin import credentials
 from firebase_admin import firestore
 
@@ -12,28 +12,38 @@ db = firestore.client()
 
 
 import csv
-with open('somesome.csv', 'r') as f:
+with open('kkk.csv', 'r') as f:
     reader = csv.reader(f)
     no = 1
 
     for row in reader:
-        title = row[0]
-        teacher = row[1]
-        target = row[2]
-        day = Daydayday(row[3])
-        term = row[4]
-        kubun = row[5]
-        kazu = row[6]
-        overview = row[7]
-        goal = row[8]
-        evaluation = row[9]
-        text = row[10]
-        text2 = row[11]
-        message = row[12]
-        learning = row[13]
+        tou = Majortou(row[0])
+        eco = Majoreco(row[0])
+        edu = Majoredu(row[0])
+        eng = Majoreng(row[0])
+        pan = Majorpan(row[0])
+        title = row[1]
+        teacher = row[2]
+        target = row[3]
+        day = Daydayday(row[4])
+        term = row[5]
+        kubun = row[6]
+        kazu = row[7]
+        overview = row[8]
+        goal = row[9]
+        evaluation = row[10]
+        text = row[11]
+        text2 = row[12]
+        message = row[13]
+        learning = row[14]
 
-        doc_ref = db.collection(u'syllabus-detail-fix').document(title)
+        doc_ref = db.collection(u'syllabus-comp').document(title)
         data = {
+            u'tourism': tou,#trueの場合その学部の授業
+            u'economics': eco,#trueの場合その学部の授業
+            u'education': edu,#trueの場合その学部の授業
+            u'engineering': eng,#trueの場合その学部の授業
+            u'culture': pan,
             u'no': no, #通し番号
             u'title': title, #授業名
             u'teacher': teacher, #教師の名前

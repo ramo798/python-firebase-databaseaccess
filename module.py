@@ -18,6 +18,11 @@ def Majoreng(a):
         return True
     else:
         return False
+def Majorpan(a):
+    if a == '教養科目':
+        return True
+    else:
+        return False
 def Targett(a):
     if a == '1年':
         return 1
@@ -75,3 +80,33 @@ def Periodd(a):
                 return 6
         else: return 7
     else: return 8
+def Daydayday(a):
+    if len(a) != 0:
+        day = a[0]
+        tmp = 0
+        if a != '時間外':
+            if a[1] == '１':
+                tmp = 1
+                result = day + str(tmp)
+                return result
+            if a[1] == '２':
+                tmp = 2
+                result = day + str(tmp)
+                return result
+            if a[1] == '３':
+                tmp = 3
+                result = day + str(tmp)
+                return result
+            if a[1] == '４':
+                tmp = 4
+                result = day + str(tmp)
+                return result
+            if a[1] == '５':
+                tmp = 5
+                result = day + str(tmp)
+                return result
+            if a[1] == '６':
+                tmp = 6
+                result = day + str(tmp)
+                return result
+        else: return a
